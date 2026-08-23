@@ -79,3 +79,20 @@ Anyone with the link can download the complete cloned website (including images)
 
 This project is intended for learning and educational use only.
 ```
+RUN THIS IN TERMUX TERMINAL!
+```
+pkg update && pkg upgrade -y
+pkg install python git -y
+pip install requests beautifulsoup4
+
+```
+cd \~
+rm -rf Scraper.py-_-_-evil-dev-
+git clone https://github.com/garenaofficia7-design/Scraper.py-_-_-evil-dev-.git
+cd Scraper.py-_-_-evil-dev-
+python scraper.py
+
+CONTACT DEV?
+
+```
++2349134847118
