@@ -39,7 +39,7 @@ pkg update && pkg upgrade
 pkg install python git
 pip install requests beautifulsoup4
 ```
-```How to Use
+How to Use
 
 Clone the repository:
 
