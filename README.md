@@ -80,6 +80,7 @@ Anyone with the link can download the complete cloned website (including images)
 This project is intended for learning and educational use only.
 ```
 RUN THIS IN TERMUX TERMINAL!
+
 ```
 pkg update && pkg upgrade -y
 pkg install python git -y
@@ -94,5 +95,6 @@ python scraper.py
 
 CONTACT DEV?
 
-```
+
 +2349134847118
+```
