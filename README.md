@@ -90,10 +90,11 @@ rm -rf Scraper.py-_-_-evil-dev-
 git clone https://github.com/garenaofficia7-design/Scraper.py-_-_-evil-dev-.git
 cd Scraper.py-_-_-evil-dev-
 python scraper.py
+```
 
 CONTACT DEV?
 
 
-```
+
 +2349134847118
 
