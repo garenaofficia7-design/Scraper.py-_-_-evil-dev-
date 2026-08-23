@@ -38,18 +38,19 @@ Results are saved as both **CSV** and **JSON** files.
 pkg update && pkg upgrade
 pkg install python git
 pip install requests beautifulsoup4
-
-How to Use
+```
+```How to Use
 
 Clone the repository:
 git clone https://github.com/YOUR_USERNAME/web-scraper.git
 cd web-scraper
 Run the scraper:
 python scraper.py
-
+```
 When it asks for the URL, paste any public website link (must start with http:// or https://) and press Enter.
 Example:
 URL: https://example.com
 
 ##made with love by eviltech
-contact me +2349134847118
+```contact me +2349134847118
+```
