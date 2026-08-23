@@ -41,9 +41,9 @@ pip install requests beautifulsoup4
 ```
 ```How to Use
 
-```Clone the repository:
-```
-git clone https://github.com/YOUR_USERNAME/web-scraper.git
+Clone the repository:
+
+```git clone https://github.com/YOUR_USERNAME/web-scraper.git
 cd web-scraper
 Run the scraper:
 python scraper.py
