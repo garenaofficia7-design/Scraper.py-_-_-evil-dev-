@@ -43,10 +43,13 @@ How to Use
 
 Clone the repository:
 
-```git clone https://github.com/YOUR_USERNAME/web-scraper.git
-cd web-scraper
-Run the scraper:
-python scraper.py
+```git clone https://github.com/garenaofficia7-design/Scraper.py-_-_-evil-dev-.git
+```cd \~
+```
+cd Scraper.py-_-_-evil-dev-
+```ls
+```
+```python scraper.py
 ```
 When it asks for the URL, paste any public website link (must start with http:// or https://) and press Enter.
 Example:
