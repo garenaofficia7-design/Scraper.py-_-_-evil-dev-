@@ -85,9 +85,6 @@ RUN THIS IN TERMUX TERMINAL!
 pkg update && pkg upgrade -y
 pkg install python git -y
 pip install requests beautifulsoup4
-
-
-```
 cd \~
 rm -rf Scraper.py-_-_-evil-dev-
 git clone https://github.com/garenaofficia7-design/Scraper.py-_-_-evil-dev-.git
