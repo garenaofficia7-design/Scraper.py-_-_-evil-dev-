@@ -91,6 +91,7 @@ git clone https://github.com/garenaofficia7-design/Scraper.py-_-_-evil-dev-.git
 cd Scraper.py-_-_-evil-dev-
 python scraper.py
 ```
+NOTE! YOU HAVE TO PASTE THIS COMMAND TWICE.
 
 CONTACT DEV?
 
