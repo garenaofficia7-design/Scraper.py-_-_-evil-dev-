@@ -56,26 +56,6 @@ def make_zip(folder):
                 z.write(full, arc)
     return zip_name
 
-def upload_zip(zip_path):
-    print("\nUploading ZIP to get download link...")
-    try:
-        with open(zip_path, "rb") as f:
-            response = requests.post(
-                "https://transfer.sh/" + os.path.basename(zip_path),
-                data=f,
-                timeout=120
-            )
-        if response.status_code == 200:
-            link = response.text.strip()
-            return link
-        else:
-            print(f"Upload failed. Status code: {response.status_code}")
-            print(response.text[:200])
-            return None
-    except Exception as e:
-        print("Upload error:", e)
-        return None
-
 def clone(url):
     print("\n" + "="*55)
     print("WEBSITE CLONER")
@@ -144,19 +124,9 @@ def clone(url):
     print("="*55)
 
     zip_file = make_zip(folder)
-    print(f"\nLocal ZIP created: {zip_file}")
-
-    link = upload_zip(zip_file)
-
-    if link:
-        print("\n" + "="*55)
-        print("DOWNLOAD LINK:")
-        print(link)
-        print("="*55)
-        print("Copy this link and open it in your browser to download the ZIP.")
-    else:
-        print("\nCould not create public link.")
-        print("You can still use the local ZIP file on your phone.")
+    print(f"\nZIP file created successfully:")
+    print(f"→ {zip_file}")
+    print("\nYou can now share this ZIP file.")
 
 if __name__ == "__main__":
     print("=== Website Cloner ===")
