@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import re
 import zipfile
-import time
 
 def clean_filename(url, default="file"):
     path = urlparse(url).path
@@ -58,22 +57,23 @@ def make_zip(folder):
     return zip_name
 
 def upload_zip(zip_path):
-    """Upload ZIP to a temporary host and return download link"""
-    print("\nUploading ZIP to get a download link...")
+    print("\nUploading ZIP to get download link...")
     try:
         with open(zip_path, "rb") as f:
             response = requests.post(
-                "https://file.io",
-                files={"file": f},
-                timeout=60
+                "https://transfer.sh/" + os.path.basename(zip_path),
+                data=f,
+                timeout=120
             )
-        data = response.json()
-        if data.get("success"):
-            return data.get("link")
+        if response.status_code == 200:
+            link = response.text.strip()
+            return link
         else:
+            print(f"Upload failed. Status code: {response.status_code}")
+            print(response.text[:200])
             return None
     except Exception as e:
-        print("Upload failed:", e)
+        print("Upload error:", e)
         return None
 
 def clone(url):
@@ -136,7 +136,6 @@ def clone(url):
                 if name:
                     tag["href"] = f"assets/{name}"
 
-    # Save HTML
     with open(os.path.join(folder, "index.html"), "w", encoding="utf-8") as f:
         f.write(str(soup.prettify()))
 
@@ -144,27 +143,26 @@ def clone(url):
     print("CLONING FINISHED")
     print("="*55)
 
-    # Create ZIP
     zip_file = make_zip(folder)
     print(f"\nLocal ZIP created: {zip_file}")
 
-    # Upload and get link
     link = upload_zip(zip_file)
+
     if link:
         print("\n" + "="*55)
-        print("DOWNLOAD LINK (valid for a limited time):")
+        print("DOWNLOAD LINK:")
         print(link)
         print("="*55)
-        print("Anyone can use this link to download the full cloned site (with images).")
+        print("Copy this link and open it in your browser to download the ZIP.")
     else:
-        print("\nCould not create public link. You can still use the local ZIP file.")
+        print("\nCould not create public link.")
+        print("You can still use the local ZIP file on your phone.")
 
 if __name__ == "__main__":
     print("=== Website Cloner ===")
-    print("Clones HTML + CSS + JS + Images and gives a download link\n")
     url = input("Enter the website URL:\n→ ").strip()
 
     if not url.startswith(("http://", "https://")):
-        print("Please enter a valid URL starting with https://")
+        print("URL must start with http:// or https://")
     else:
         clone(url)
